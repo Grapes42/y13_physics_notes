@@ -23,6 +23,7 @@
 |$\tau$|Torque|$Nm$ (Newton metres)|
 |$v$|Velocity|$ms^{-1}$ (Metres per second)|
 |$\omega$|Angular velocity|$rads^{-1}$ (Radians per second)|
+|$\theta$|Theta (Angle)|Radians|
 
 
 
@@ -34,50 +35,67 @@
 
 
 ## Equations
-### Standard
-- $E_{K(LIN)} = \frac{1}{2}mv^2$
-- $E_p = \frac{1}{2}ky^2$
-- $\Delta E_p = mg \Delta h$
-- $F = ma$
-- $F = -ky$
-- $\Delta p = F \Delta t$
-- $T = 2 \pi \sqrt{\frac{l}{g}}$
-- $W = Fd$
-- $x_{COM} = \frac{m_1 x_1 + m_2 + x_2}{m_1 + m_2}$
-- $y = A sin \omega t$
-- $y = A cos \omega t$
+### Equations without angular calculations
+- Energy
+	- $E_{K(LIN)} = \frac{1}{2}mv^2$
+	- $E_p = \frac{1}{2}ky^2$
+	- $\Delta E_p = mg \Delta h$
+- Force
+	- $F = ma$
+	- $F = -ky$
+- Momentum
+	- $\Delta p = F \Delta t$
+- Interval of time
+	- $T = 2 \pi \sqrt{\frac{l}{g}}$
+- Work
+	- $W = Fd$
+- Center of mass
+	- $x_{COM} = \frac{m_1 x_1 + m_2 + x_2}{m_1 + m_2}$
+- AAAAAAA
+	- $y = A sin \omega t$
+	- $y = A cos \omega t$
 
-### Rotational
-- $a = -A \omega^2 sin \omega t$
-- $a = -A \omega^2 cos \omega t$
-- $a = r \alpha$
-- $a = - \omega^2 y$
-- $\alpha = \frac{\Delta \omega}{\Delta t}$
-- $d = r\theta$
-- $E_{K(ROT)} = \frac{1}{2} I \omega^2$
-- $F_g = \frac{GMm}{r^2}$
-- $F_c = \frac{mv^2}{r}$
-- $I = mr^2$ (For hollow ring)
-- $I = \frac{1}{2}mr^2$ (For solid disk)
-- $I = \frac{2}{5}mr^2$ (For solid sphere)
-- $L = mvr$
-- $L = mr^2 \frac{v}{r}$
-- $L = I \omega$
-- $T = 2 \pi \sqrt{\frac{m}{k}}$
-- $\tau = I\alpha$
-- $\tau = Fr$
-- $\tau = r F cos \theta$
-- $v = A \omega cos \omega t$
-- $v = -A \omega sin \omega t$
-- $v \geq \sqrt{gr}$
-- $\omega = 2 \pi f$
-- $\omega_f = \omega_i + \alpha t$
-- $\omega = \frac{\Delta \theta}{\Delta t}$
-- $\omega_f^2 = \omega_i^2 + 2 \alpha \theta$
-- $\theta = \omega_i t + \frac{1}{2} \alpha t^2$
-- $\theta = \omega_f t - \frac{1}{2} \alpha t^2$
-- $\theta = \frac{\omega_f + \omega_i}{2}t$
-
-### Kinematics
+### Equations involing angular calculations
+#### Use radians for $\theta$
+- Acceleration
+	- $a = -A \omega^2 sin \omega t$
+	- $a = -A \omega^2 cos \omega t$
+	- $a = r \alpha$
+	- $a = - \omega^2 y$
+	- $\alpha = \frac{\Delta \omega}{\Delta t}$
+- Distance
+	- $d = r\theta$
+- Energy
+	- $E_{K(ROT)} = \frac{1}{2} I \omega^2$
+- Force
+	- $F_g = \frac{GMm}{r^2}$
+	- $F_c = \frac{mv^2}{r}$
+- Moment of intertia
+	- $I = mr^2$ (For hollow ring)
+	- $I = \frac{1}{2}mr^2$ (For solid disk)
+	- $I = \frac{2}{5}mr^2$ (For solid sphere)
+- Angular momentum
+	- $L = mvr$
+	- $L = mr^2 \frac{v}{r}$
+	- $L = I \omega$
+- Interval of time
+	- $T = 2 \pi \sqrt{\frac{m}{k}}$
+- Torque
+	- $\tau = I\alpha$
+	- $\tau = Fr$
+	- $\tau = r F cos \theta$
+- Linear velocity
+	- $v = A \omega cos \omega t$
+	- $v = -A \omega sin \omega t$
+	- $v \geq \sqrt{gr}$
+- Angular velocity
+	- $\omega = 2 \pi f$
+	- $\omega_f = \omega_i + \alpha t$
+	- $\omega = \frac{\Delta \theta}{\Delta t}$
+	- $\omega_f^2 = \omega_i^2 + 2 \alpha \theta$
+- Angle
+	- $\theta = \omega_i t + \frac{1}{2} \alpha t^2$
+	- $\theta = \omega_f t - \frac{1}{2} \alpha t^2$
+	- $\theta = \frac{\omega_f + \omega_i}{2}t$
 
 
