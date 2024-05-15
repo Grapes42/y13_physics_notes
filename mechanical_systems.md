@@ -51,7 +51,7 @@
 	- $W = Fd$
 - Center of mass
 	- $x_{COM} = \frac{m_1 x_1 + m_2 + x_2}{m_1 + m_2}$
-- AAAAAAA
+- Harmonic motion
 	- $y = A sin \omega t$
 	- $y = A cos \omega t$
 
