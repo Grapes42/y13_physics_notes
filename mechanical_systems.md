@@ -52,7 +52,7 @@
 - Center of mass
 	- $x_{COM} = \frac{m_1 x_1 + m_2 + x_2}{m_1 + m_2}$
 
-### Equations involing angular calculations
+### Equations involving angular calculations
 #### Use radians for $\theta$
 - Acceleration
 	- $a = -A \omega^2 sin \omega t$
