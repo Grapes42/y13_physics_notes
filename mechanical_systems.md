@@ -1,4 +1,4 @@
-# Mechanics Notes
+# Mechanical Systems Notes
 ## Symbols
 |Symbol|Name|Unit|
 |---|---|---|
