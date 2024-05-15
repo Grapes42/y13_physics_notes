@@ -51,9 +51,6 @@
 	- $W = Fd$
 - Center of mass
 	- $x_{COM} = \frac{m_1 x_1 + m_2 + x_2}{m_1 + m_2}$
-- Harmonic motion
-	- $y = A sin \omega t$
-	- $y = A cos \omega t$
 
 ### Equations involing angular calculations
 #### Use radians for $\theta$
@@ -93,6 +90,9 @@
 	- $\omega_f = \omega_i + \alpha t$
 	- $\omega = \frac{\Delta \theta}{\Delta t}$
 	- $\omega_f^2 = \omega_i^2 + 2 \alpha \theta$
+- Harmonic motion
+	- $y = A sin \omega t$
+	- $y = A cos \omega t$
 - Angle
 	- $\theta = \omega_i t + \frac{1}{2} \alpha t^2$
 	- $\theta = \omega_f t - \frac{1}{2} \alpha t^2$
