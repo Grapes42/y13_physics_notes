@@ -23,7 +23,7 @@
 |$T$|Interval of time|&uarr;
 |$\tau$|Torque|$Nm$ (Newton metres)|
 |$v$|Velocity|$ms^{-1}$ (Metres per second)|
-|$\omega$|Angular velocity|$rads^{-1}$ (Radians per second)|
+|$\omega$|Angular velocity/Angular frequency|$rads^{-1}$ (Radians per second)|
 |$\theta$|Theta (Angle)|Radians|
 
 
