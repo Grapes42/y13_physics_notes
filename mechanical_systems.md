@@ -89,7 +89,7 @@
 	- $v = A \omega cos \omega t$
 	- $v = -A \omega sin \omega t$
 	- $v \geq \sqrt{gr}$
-- Angular velocity
+- Angular velocity/Angular frequency
 	- $\omega = 2 \pi f$
 	- $\omega_f = \omega_i + \alpha t$
 	- $\omega = \frac{\Delta \theta}{\Delta t}$
