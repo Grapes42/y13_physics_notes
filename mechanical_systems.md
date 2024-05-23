@@ -101,7 +101,4 @@
 	- $\theta = \omega_i t + \frac{1}{2} \alpha t^2$
 	- $\theta = \omega_f t - \frac{1}{2} \alpha t^2$
 	- $\theta = \frac{\omega_f + \omega_i}{2}t$
-## Reference Circle
-The rez
-![](assets/reference_circle/preview.png)
 
