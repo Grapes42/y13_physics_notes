@@ -23,7 +23,7 @@
 |$T$|Interval of time|&uarr;
 |$\tau$|Torque|$Nm$ (Newton metres)|
 |$v$|Velocity|$ms^{-1}$ (Metres per second)|
-|$\omega$|Angular velocity|$rads^{-1}$ (Radians per second)|
+|$\omega$|Angular velocity/Angular frequency|$rads^{-1}$ (Radians per second)|
 |$\theta$|Theta (Angle)|Radians|
 
 
@@ -89,7 +89,7 @@
 	- $v = A \omega cos \omega t$
 	- $v = -A \omega sin \omega t$
 	- $v \geq \sqrt{gr}$
-- Angular velocity
+- Angular velocity/Angular frequency
 	- $\omega = 2 \pi f$
 	- $\omega_f = \omega_i + \alpha t$
 	- $\omega = \frac{\Delta \theta}{\Delta t}$
