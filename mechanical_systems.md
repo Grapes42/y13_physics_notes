@@ -102,3 +102,12 @@
 	- $\theta = \omega_f t - \frac{1}{2} \alpha t^2$
 	- $\theta = \frac{\omega_f + \omega_i}{2}t$
 
+## Reference circle
+This animation shows how the path of an oscillation can be plotted on a circle:
+![image caption](assets/circle_sine.GIF)
+This animation shows how an oscillation of a swing can be plotted on a circle:
+![image caption](assets/swing.GIF)
+This animation shows how an oscillation of a bungee rope/spring can be plotted on a circle:
+![image caption](assets/bungee.GIF)
+
+
