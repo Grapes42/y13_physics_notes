@@ -9,3 +9,4 @@ These notes use something called Markdown, so if you get weird text like \\$\\al
 
 ## Standards
  - [Mechanical Systems](mechanical_systems.md)
+ - [Waves](waves.md)
