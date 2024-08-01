@@ -24,3 +24,12 @@
 - $sin \theta = \frac{n\lambda}{d}$
 - $\frac{x}{L}=\frac{n \lambda}{d}$
 - $n \lambda = \frac{dx}{L}$ (can only be used in the double slit, not diffraction gratings)
+
+## Difraction in CDs
+
+### Made of
+- Polycarbonate Plastic
+- Aluminium
+- Acrylic
+- Label
+- $\frac{1}{4}\lambda$ apart (flat)
