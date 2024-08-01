@@ -66,3 +66,6 @@ $\sum V_{i(loop)} = 0$
 |<img src="assets/circuits/images/full_circuit.png" alt="drawing" width="500"/> ||
 |<img src="assets/circuits/images/top_circuit.png" alt="drawing" width="500"/>||
 |<img src="assets/circuits/images/bottom_circuit.png" alt="drawing" width="500"/>||
+
+
+## Mutli
