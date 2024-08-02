@@ -1,91 +1,93 @@
-help_str = """- Separate each item with a ','
-- Enter battery as '+' and '-' in respective poll order following your direction, followed by its voltage. E.g. a 5v battery flowing from pos to neg, would be: +-5"""
+"""
+Steps to solve 2 loop circuit:
 
-def sum_of_list(list):
-    sum = 0
+- Get user input for circuit content
+- Calculate voltage and resistance of each row
+- Determine direction of each row
+- Determine loop equation
+"""
 
-    for item in list:
-        sum += item
+class Row():
+    def __init__(self, input_string) -> None:
+        content = input_string.replace(" ", "").split(",")
 
-    return sum
+        self.voltage = 0
+        self.resistance = 0
+        self.direction = 0
 
-def flip_list(list):
-    for i in range(len(list)):
-        list[i] = list[i] * -1
-    return list
+        for item in content:
+            if item[:2] == "-+":
+                self.voltage += float(item[2:])
+            elif item[:2] == "+-":
+                self.voltage += float(item[2:])*-1
+            else:
+                self.resistance += float(item)
 
-def string_to_parts(str):
-    content = str.replace(" ", "").split(",")
+#
+# Functions
+#
+def return_currents(i_0=0, i_1=0, i_2=0):
+    return i_0, i_1, i_2
 
-    voltage = 0
-    resistance = 0
+def calculate_loop(rows, a, b):
+    currents = {0:"i_0", 1:"i_1", 2:"i_2"}
 
-    for item in content:
-        if item[:2] == "-+":
-            voltage += float(item[2:])
-        elif item[:2] == "+-":
-            voltage += float(item[2:])*-1
-        else:
-            resistance += float(item)
+    voltage_a = rows[a].voltage * rows[a].direction
+    voltage_b = rows[b].voltage * rows[b].direction * -1
 
-    return voltage, resistance
+    voltage = voltage_a + voltage_b
+
+    resistance_a = rows[a].resistance * rows[a].direction * -1
+    resistance_b = rows[b].resistance * rows[b].direction
+
+    i_0, i_1, i_2 = eval(f"return_currents({currents[a]}=resistance_a, {currents[b]}=resistance_b)")
+
+    equation = f"{i_0}(I of row 1) + {i_1}(I of row 2) + {i_2}(I of row 3) = {voltage}"
+
+    return equation
 
 
-def find_directions(rows):
-    row_directions = []
-
-    for row in rows:
-        voltage, resistance = string_to_parts(row)
-
-        row_directions.append(voltage)
-
-    avg_dir = 0
-
-    for direction in row_directions:
-        avg_dir += direction
-
-    for i in range(len(row_directions)):
-        if row_directions[i] == 0:
-            row_directions[i] = avg_dir * -1
-
-    return row_directions
-
-def calculate_loop(row_a, row_b, direction_a, direction_b):
-    a_voltage, a_resistance = string_to_parts(row_a)
-    b_voltage, b_resistance = string_to_parts(row_b)
-
-    if direction_a > 0:
-        a_voltage = abs(a_voltage) * -1
-        a_resistance = abs(a_resistance) * -1
-    
-    if direction_b > 0:
-        b_voltage = abs(b_voltage) * -1
-        b_resistance = abs(b_resistance) * -1
-
-    
-
-    voltage = a_voltage + b_voltage
-    resistance = a_resistance + b_resistance
-
-    return voltage, resistance
 
 #
 # Main
-#     
-
+#
 no_of_loops = 2
-
 rows = []
 
+letters = {1: "A", 2: "B", 3: "C"}
+
+# Get all inputs
 for i in range(no_of_loops+1):
-    rows.append(str(input(f"Enter row {i+1}: ")))
+    rows.append(
+        Row(str(input(f"Enter row {i+1}: ")))
+    )
 
-row_directions = find_directions(rows)
+#
+# Finding direction
+#
 
-voltage, resistance = calculate_loop(
-    row_a=rows[0], direction_a=row_directions[0],
-    row_b=rows[1], direction_b=row_directions[1]
-)
+avg_direction = 0
 
-print(voltage)
-print(resistance)
+# Determine all easy to find directions,
+# and create an average direction
+for row in rows:
+    if row.voltage < 0:
+        row.direction = -1
+    elif row.voltage > 0:
+        row.direction = 1
+
+    avg_direction += row.direction
+
+# Find any row that has no direction, and use 
+# Kirchoff's law to determine its direction
+for row in rows:
+    if row.direction == 0:
+        if avg_direction < 0:
+            row.direction = 1
+        else:
+            row.direction = -1
+
+# Calculate loops
+print(calculate_loop(rows, 0, 1))
+print(calculate_loop(rows, 1, 2))
+print("-1 + -1 + 1 = 0")
