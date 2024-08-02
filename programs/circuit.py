@@ -1,43 +1,91 @@
 help_str = """- Separate each item with a ','
 - Enter battery as '+' and '-' in respective poll order following your direction, followed by its voltage. E.g. a 5v battery flowing from pos to neg, would be: +-5"""
 
-def string_to_maths(string):
-    content = string.replace(" ", "").split(",")
+def sum_of_list(list):
+    sum = 0
 
-    list = []
+    for item in list:
+        sum += item
+
+    return sum
+
+def flip_list(list):
+    for i in range(len(list)):
+        list[i] = list[i] * -1
+    return list
+
+def string_to_parts(str):
+    content = str.replace(" ", "").split(",")
+
+    voltage = 0
+    resistance = 0
 
     for item in content:
         if item[:2] == "-+":
-            list.append(float(item[2:])*(direction))
+            voltage += float(item[2:])
         elif item[:2] == "+-":
-            list.append(float(item[2:])*(direction*-1))
-        elif item == "N":
-            list.append(0)
+            voltage += float(item[2:])*-1
         else:
-            list.append(int(item))
+            resistance += float(item)
 
-    return list
+    return voltage, resistance
+
+
+def find_directions(rows):
+    row_directions = []
+
+    for row in rows:
+        voltage, resistance = string_to_parts(row)
+
+        row_directions.append(voltage)
+
+    avg_dir = 0
+
+    for direction in row_directions:
+        avg_dir += direction
+
+    for i in range(len(row_directions)):
+        if row_directions[i] == 0:
+            row_directions[i] = avg_dir * -1
+
+    return row_directions
+
+def calculate_loop(row_a, row_b, direction_a, direction_b):
+    a_voltage, a_resistance = string_to_parts(row_a)
+    b_voltage, b_resistance = string_to_parts(row_b)
+
+    if direction_a > 0:
+        a_voltage = abs(a_voltage) * -1
+        a_resistance = abs(a_resistance) * -1
     
-def combine(a, b):
-    for i in range(len(b)):
-        a.append(b[i])
-    return a
+    if direction_b > 0:
+        b_voltage = abs(b_voltage) * -1
+        b_resistance = abs(b_resistance) * -1
 
-rot_directions = {1: "clockwise", -1: "counter-clockwise"}
-lin_directions = {1: "left to right", -1: "right to left"}
-direction = int(input("Clockwise (1), Counter-clockwise (-1)\nChoose direction: "))
+    
 
-no_of_loops = int(input("Enter number of loops: "))
+    voltage = a_voltage + b_voltage
+    resistance = a_resistance + b_resistance
 
-maths = []
+    return voltage, resistance
 
-outside_loop = str(input(f"Your direction is {rot_directions[direction]}. Enter the outside loop content: "))
+#
+# Main
+#     
 
-bridges = {}
+no_of_loops = 2
 
-for i in range(no_of_loops-1):
-    bridges[i] = str(input(f"Your direction is {lin_directions[direction]}. Enter the content of bridge {i}: "))
+rows = []
 
-print(string_to_maths(outside_loop))
-print(string_to_maths(bridges[i]))
+for i in range(no_of_loops+1):
+    rows.append(str(input(f"Enter row {i+1}: ")))
 
+row_directions = find_directions(rows)
+
+voltage, resistance = calculate_loop(
+    row_a=rows[0], direction_a=row_directions[0],
+    row_b=rows[1], direction_b=row_directions[1]
+)
+
+print(voltage)
+print(resistance)
