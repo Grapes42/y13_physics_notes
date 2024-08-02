@@ -42,9 +42,7 @@ def calculate_loop(rows, a, b):
 
     i_0, i_1, i_2 = eval(f"return_currents({currents[a]}=resistance_a, {currents[b]}=resistance_b)")
 
-    equation = f"{i_0}(I of row 1) + {i_1}(I of row 2) + {i_2}(I of row 3) = {voltage}"
-
-    return equation
+    return [i_0, i_1, i_2, voltage]
 
 
 
@@ -53,8 +51,6 @@ def calculate_loop(rows, a, b):
 #
 no_of_loops = 2
 rows = []
-
-letters = {1: "A", 2: "B", 3: "C"}
 
 # Get all inputs
 for i in range(no_of_loops+1):
@@ -88,6 +84,21 @@ for row in rows:
             row.direction = -1
 
 # Calculate loops
-print(calculate_loop(rows, 0, 1))
-print(calculate_loop(rows, 1, 2))
+loops = []
+for i in range(no_of_loops):
+    loops.append(calculate_loop(rows, i, i+1))
+
+print("\nHere are your equations: ")
+for loop in loops:
+    print(f"{loop[0]}(I of row 1) + {loop[1]}(I of row 2) + {loop[2]}(I of row 3) = {loop[3]}")
 print("-1 + -1 + 1 = 0")
+
+print("\nHere is what you put in your calculator:")
+for loop in loops:
+    print(f"{loop[0]}, {loop[1]}, {loop[2]}, {loop[3]}")
+print("-1, -1, 1, 0")
+
+print("""\nYour outputs will be:
+x = I of first row
+y = I of second row
+z = I of third row""")
