@@ -96,7 +96,9 @@ print("-1 + -1 + 1 = 0")
 print("\nHere is what you put in your calculator:")
 for loop in loops:
     print(f"{loop[0]}, {loop[1]}, {loop[2]}, {loop[3]}")
-print("-1, -1, 1, 0")
+    
+signs = {-1: "-", 1: ""}
+print(f"{signs[rows[0].direction]}1, {signs[rows[1].direction]}1, {signs[rows[2].direction]}1, 0")
 
 print("""\nYour outputs will be:
 x = I of first row
