@@ -10,11 +10,15 @@ Positive $\rightarrow$ Negative
 ## Symbols
 |Symbol|Name|Unit|
 |-|-|-|
-|$B$|Magnectic Flux Density|$T$ (tesla) or $Wb/m^2$ (Weber per square metre)|
+|$A$|Common area of overlap|$m^2$ (Metres squared|
+|$B$|Magnectic Flux Density|$T$ (Tesla) or $Wb/m^2$ (Weber per square metre)|
 |$C$|Capacitance|$F$ (Farads)|
+|$d$|Distance|$m$ (Metres)|
 |$E$|Energy|$J$ (Joule)|
-|$L$|Inductance|$H$ (Henry)|
 |$\xi$|EMF (Electromotive force)|$V$ (Volts)|
+|$\xi_0$|Absolute Permittivity of free space|$F/m$ (Farad per metre)|
+|$\xi_r$|Dielectric constant|Unitless|
+|$L$|Inductance|$H$ (Henry)|
 |$P$|Power|$W$ (Watt)|
 |$R$|Resistance|$\Omega$ (Ohms)|
 |$\tau$|Time constant|$s$ (Seconds)|
@@ -25,6 +29,7 @@ Positive $\rightarrow$ Negative
 - $V = Ed$
 - $\Delta E = Vq$
 - $E = \frac{1}{2}QV$
+- $E = \frac{1}{2}CV^2$
 - $Q = CV$
 - $C = \frac{\xi_o \xi_r A}{d}$
 - $C_T = C_1 + C_2 + ...$
@@ -68,4 +73,44 @@ $\sum V_{i(loop)} = 0$
 |<img src="assets/circuits/images/bottom_circuit.png" alt="drawing" width="500"/>||
 
 
-## Mutli
+- R in DC
+- C in DC
+- L in DC
+- AC
+
+- Capactivantce 
+- Series/parrallel
+- Energy 
+- Time constant
+- Transient voltage
+
+capacitors store energy by creating a charge difference between 2 sheets of metal
+
+capactitance 
+
+$C = \frac{Q}{V}$
+
+Q = mag of charge
+
+voltage dif is created bwtween sheets
+
+farads
+
+capactitance = physical chars of capacitor
+
+C = mF
+= 10^6 F
+
+must convert mF to F
+
+$E_p = \frac{1}{2} QV$
+
+$C = Q/V$
+
+capacitors are only 1/2 because the voltage difference decreases as energy is used
+
+
+$E = 1/2 C V^2$
+
+have to use specific voltage in capacitor equations
+
